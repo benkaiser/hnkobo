@@ -1,0 +1,15 @@
+[Unit]
+Description=HN Kobo - Hacker News reader for Kobo e-readers
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/benkaiser/git/hnkobo
+ExecStart=/usr/bin/node /home/benkaiser/git/hnkobo/src/server.js
+Restart=on-failure
+RestartSec=5
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,116 @@
+/* HN Kobo - minimal, plaintext-y styles for fast e-ink rendering.
+   Elipsa 2e is ~1404x1872 @ ~227ppi. Generous sizes; device can zoom. */
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  line-height: 1.5;
+  color: #000;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+main { max-width: 100%; margin: 0; padding: 16px 20px 80px; }
+
+a { color: #000; text-decoration: underline; }
+
+.topbar {
+  border-bottom: 3px solid #000;
+  padding: 14px 20px;
+  font-weight: bold;
+  font-size: 26px;
+}
+.topbar .home { text-decoration: none; }
+
+/* ---- front page story list ---- */
+.stories { list-style: none; margin: 0; padding: 0; }
+
+.story {
+  padding: 18px 0;
+  border-bottom: 2px solid #999;
+}
+.story.read .title { color: #888; }
+.story.read .meta { color: #aaa; }
+
+.story-head .title { font-size: 24px; font-weight: bold; }
+.host { font-size: 17px; color: #666; font-weight: normal; }
+
+.meta { font-size: 17px; color: #555; margin: 6px 0 12px; }
+
+/* ---- big tap buttons ---- */
+.btnrow { display: flex; flex-wrap: wrap; gap: 12px; }
+.btnrow.bottom { margin-top: 28px; }
+
+.btn {
+  display: inline-block;
+  min-width: 150px;
+  text-align: center;
+  padding: 16px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 3px solid #000;
+  border-radius: 6px;
+  background: #fff;
+}
+.btn-off { border-color: #bbb; color: #bbb; }
+
+/* ---- comments ---- */
+.commentpage h1, .articlepage h1 { font-size: 30px; line-height: 1.25; }
+
+.storytext, .articlebody { margin-top: 20px; }
+.articlebody { font-size: 23px; line-height: 1.6; }
+.articlebody img { max-width: 100%; height: auto; }
+.articlebody pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f2f2f2;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.comments { margin-top: 24px; }
+
+.comment {
+  margin: 14px 0;
+  padding-left: 14px;
+  border-left: 3px solid #ccc;
+}
+.comment[data-depth="0"] { border-left-color: #000; padding-left: 0; border-left: none; }
+
+.cmeta { font-size: 16px; color: #555; margin-bottom: 4px; }
+.ctext { word-wrap: break-word; overflow-wrap: break-word; }
+.ctext pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f2f2f2;
+  padding: 8px;
+  font-size: 17px;
+}
+.ctext p { margin: 8px 0; }
+
+.dead { color: #999; font-style: italic; }
+
+/* big tap target for expand/collapse */
+.toggle {
+  font: inherit;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 8px;
+  padding: 6px 14px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.kids { margin-top: 6px; }
+.kids.collapsed { display: none; }
+
+.empty { color: #666; font-style: italic; }
+.byline { font-size: 18px; color: #555; margin: 6px 0 12px; }
